@@ -1,0 +1,81 @@
+
+<!doctype html>
+<!-- file: js_test08.html
+-->
+<html>
+	
+	<body>
+		<label>Enter a number</label>
+		<input type="text" id="in01" onkeyup="myFun();" />
+		<br />
+		<p id="out01">Output: </p>
+		
+		<script>
+		
+			//for three extra credit points create an array that conatins 5 functions add2(),subtract4(),mod5(),power3(),toString() array contains the functions, then write a function to loop through the array of 
+			//functions and append textNodes to a oaragraph <p> in the DOM
+			//Which contain the output of a parameter
+			
+
+		var myFun = function() {
+
+				var x = Number(document.getElementById("in01").value);
+				loopingFun(x);
+			}
+			
+			function loopingFun(x) {
+			var num = document.getElementById("out01");
+			num.appendChild(document.createElement("br"));
+			num.appendChild(document.createTextNode("The number is: " + x));
+					var array_of_functions = [
+			function add2() {
+						return (x+2);
+					},
+
+			function subtract4() {
+						return (x-4);
+					},
+					
+			function mod5() {
+						return (x%5);
+					},
+					
+			function power3() {
+						return(Math.pow(x,3));
+					},
+					
+			function toString(){
+						x = String(x);
+					
+					
+					
+					return (x +" is type " + typeof(x));
+					}					
+					
+]
+					var w = array_of_functions;
+
+				for(var i= 0; i < 5; i ++) {
+					var tn = w[i](x);
+					num.appendChild(document.createElement("br"));
+					num.appendChild(document.createTextNode(tn));
+					
+				}
+			}
+			
+		
+			
+
+			
+			
+		</script>
+		
+	</body>
+	
+</html>
+
+
+
+
+
+
